@@ -2,7 +2,7 @@ import formatStr from 'src/utils/replaceVariables'
 
 import { FontToString, Output } from '../type'
 
-const TEMP_INFO = `<info face="$face$" size="$size$" bold="$bold$" italic="$italic$" charset="$charset$" unicode="$unicode$" stretchH="$stretchH$" smooth="$smooth$" aa="$aa$" padding="$padding$" spacing="$spacing$" />`
+const TEMP_INFO = `<info face="$face$" size="$size$" bold="$bold$" italic="$italic$" charset="$charset$" unicode="$unicode$" stretchH="$stretchH$" smooth="$smooth$" autoScaleSize="$autoScaleSize$" aa="$aa$" padding="$padding$" spacing="$spacing$" />`
 const TEMP_COMMON = `<common lineHeight="$lineHeight$" base="$base$" scaleW="$scaleW$" scaleH="$scaleH$" pages="$pages$" packed="$packed$" />`
 const TEMP_PAGE = `<page id="$id$" file="$file$" />`
 const TEMP_CHARS = `<chars count="$count$" />`
@@ -12,7 +12,7 @@ const TEMP_KERNING = `<kerning first="$first$" second="$second$" amount="$amount
 
 const type = 'XML'
 
-const exts = ['xml', 'fnt']
+const exts = ['fnt', 'xml']
 
 // http://www.angelcode.com/products/bmfont/doc/file_format.html
 const getString: FontToString = (bmfont) => {

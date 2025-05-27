@@ -33,6 +33,7 @@ export default function toBmfInfo(project: Project, fontFamily = ''): BMFont {
     unicode: 1,
     stretchH: 100,
     smooth: 1,
+    autoScaleSize: true,
     aa: 1,
     padding: new Array(4).fill(layout.padding),
     spacing: new Array(2).fill(layout.spacing),

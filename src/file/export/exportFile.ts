@@ -12,7 +12,7 @@ export default function exportFile(
   fontName: string,
   fileName: string,
 ): void {
-  const zip = new JSZip()
+  // const zip = new JSZip()
   const { packCanvas, glyphList, name, layout, ui } = project
   const bmfont = toBmfInfo(project, fontName)
   let text = config.getString(bmfont)
@@ -22,7 +22,7 @@ export default function exportFile(
     text = text.replace(`file="${name}.png"`, `file="${saveFileName}.png"`)
   }
 
-  zip.file(`${saveFileName}.${config.ext}`, text)
+  // zip.file(`${saveFileName}.${config.ext}`, text)
 
   const canvas = document.createElement('canvas')
   canvas.width = ui.width
@@ -30,9 +30,14 @@ export default function exportFile(
   drawPackCanvas(canvas, packCanvas, glyphList, layout.padding)
 
   canvas.toBlob((blob) => {
-    if (blob) zip.file(`${saveFileName}.png`, blob)
-    zip
-      .generateAsync({ type: 'blob' })
-      .then((content) => saveAs(content, `${saveFileName}.zip`))
+    if (blob) {
+      const fnt = new Blob([text], { type: 'text/xml' })
+      saveAs(fnt, `${saveFileName}.${config.ext}`)
+      saveAs(blob, `${saveFileName}.png`)
+    }
+    // if (blob) zip.file(`${saveFileName}.png`, blob)
+    // zip
+    //   .generateAsync({ type: 'blob' })
+    //   .then((content) => saveAs(content, `${saveFileName}.zip`))
   })
 }

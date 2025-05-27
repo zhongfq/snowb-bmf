@@ -32,7 +32,7 @@ class Font {
 
   bottom = 0
 
-  sharp = 80
+  sharp = 0
 
   get mainFont() {
     if (this.fonts.length > 0) return this.fonts[0]
@@ -108,7 +108,7 @@ class Font {
     })
     this.size = font.size || 72
     this.lineHeight = font.lineHeight || 1.25
-    this.sharp = is.num(font.sharp) ? font.sharp : 80
+    this.sharp = is.num(font.sharp) ? font.sharp : 0
     if (font.fonts && font.fonts.length) {
       font.fonts.forEach((fontResource) => this.addFont(fontResource.font))
     } else {

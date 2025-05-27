@@ -2,7 +2,7 @@ import { ConfigItem } from './type'
 import text from './types/text'
 import xml from './types/xml'
 
-const list = [text, xml]
+const list = [xml, text]
 
 export const configList: ConfigItem[] = []
 

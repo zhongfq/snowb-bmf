@@ -10,6 +10,7 @@ export interface BMFontInfo extends Record<string, unknown> {
   aa: number
   padding: number[]
   spacing: number[]
+  autoScaleSize: boolean
 }
 
 export interface BMFontCommon extends Record<string, unknown> {
